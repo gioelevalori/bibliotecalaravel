@@ -13,13 +13,13 @@ class Libri extends Migration
      */
     public function up()
     {
-        Schema::create('libris', function (Blueprint $table) {
+        Schema::create('libri', function (Blueprint $table) {
             $table->id();
             $table->text('Titolo');
             $table->unsignedbigInteger('autore_id');
-            $table->foreign('autore_id')->references('id')->on('autoris')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('autore_id')->references('id')->on('autori')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedbigInteger('editore_id');
-            $table->foreign('editore_id')->references('id')->on('editoris')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('editore_id')->references('id')->on('editori')->onUpdate('cascade')->onDelete('cascade');
             $table->text('luogo_edizione');
             $table->text('condizione_libro');
             $table->text('codice');
@@ -41,6 +41,6 @@ class Libri extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('libris');
+        Schema::dropIfExists('libri');
     }
 }

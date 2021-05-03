@@ -28,7 +28,7 @@
               <a class="nav-link" href="{{ route('utenti.index')}}">Utenti</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Libri</a>
+              <a class="nav-link" href="{{ route('libri.index')}}">Libri</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Prestiti</a>

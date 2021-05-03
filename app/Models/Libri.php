@@ -18,5 +18,7 @@ class Libri extends Model
     public function editori() {
         return $this->belongsTo(Editori::class);
     }
+
+    protected $table = "libri";
      
 }

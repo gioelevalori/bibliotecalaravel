@@ -13,10 +13,9 @@ class Editori extends Migration
      */
     public function up()
     {
-        Schema::create('editoris', function (Blueprint $table) {
+        Schema::create('editori', function (Blueprint $table) {
             $table->id();
             $table->text('nome');
-            $table->text('cognome');
             $table->text('sito_editore');
             $table->timestamps();
            
@@ -31,6 +30,6 @@ class Editori extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('editoris');
+        Schema::dropIfExists('editori');
     }
 }

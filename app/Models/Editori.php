@@ -15,4 +15,6 @@ class Editori extends Model
     public function libri() {
         return $this->hasMany(Libri::class);
     }
+
+    protected $table = "editori";
 }

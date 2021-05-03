@@ -6,7 +6,6 @@
     <tr>
         <th>ID</th>
         <th>Nome</th>
-        <th>Cognome</th>
         <th>Sito editore</th>
         <th colspan = "2">Azioni</th>
     </tr>
@@ -15,7 +14,6 @@
 <tr>
     <td>{{ $editore->id }}</td>
     <td>{{ $editore->nome }}</td>
-    <td>{{ $editore->cognome }}</td>
     <td>{{ $editore->sito_editore }}</td>
     <td><a href="/editori/{{ $editore->id }}/edit" class="btn btn-primary">Modifica</a></td>
     <td>

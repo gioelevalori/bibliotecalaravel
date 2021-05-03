@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Utenti;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class UtenteController extends Controller
     public function index()
     {
        
-        $utenti = Utenti::all();
+        $utenti = User::all();
         return view('utenti.index',compact('utenti'));
     }
 
@@ -32,16 +32,18 @@ class UtenteController extends Controller
 
 
         $validated = $request->validate([
-            'nome' => 'required||max:255',
+            'name' => 'required||max:255',
             'cognome' => 'required',
             'email' => 'required', 
+            'telefono' => 'required', 
         ]);
         
 
-        $utente = new Utenti;
-        $utente->nome = $request->nome;
+        $utente = new User;
+        $utente->name = $request->name;
         $utente->cognome = $request->cognome;
         $utente->email = $request->email;
+        $utente->telefono = $request->telefono;
       
         $utente->save();
 
@@ -61,7 +63,7 @@ class UtenteController extends Controller
      */
     public function edit($id)
     {
-        $utenti = Utenti::find($id);
+        $utenti = User::find($id);
         return view('utenti.edit',compact('utenti'));
     }
 
@@ -74,10 +76,11 @@ class UtenteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $utente = Utenti::find($id); 
-        $utente->nome = $request->nome;
+        $utente = User::find($id); 
+        $utente->name = $request->name;
         $utente->cognome = $request->cognome;
         $utente->email = $request->email;
+        $utente->telefono = $request->telefono;
       
         $utente->save();
 
@@ -92,7 +95,7 @@ class UtenteController extends Controller
      */
     public function destroy($id)
     {
-        $utente = Utenti::find($id);
+        $utente = User::find($id);
         $utente->delete();
         return redirect('/utenti');
 
