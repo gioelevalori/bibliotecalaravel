@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/admin', function () {
     return view('admin.index');
-})->middleware(['auth'])->name('admin');
+})->middleware('admin');
 
 
 
