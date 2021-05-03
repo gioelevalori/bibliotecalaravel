@@ -33,7 +33,7 @@ class UtenteController extends Controller
 
         $validated = $request->validate([
             'name' => 'required||max:255',
-            'cognome' => 'required',
+            'cognome' => 'required||max:255',
             'email' => 'required', 
             'telefono' => 'required', 
         ]);
