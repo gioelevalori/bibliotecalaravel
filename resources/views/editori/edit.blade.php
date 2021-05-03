@@ -7,9 +7,6 @@
 @csrf
 Nome:<br>
 <input type="text" name="nome" class="form-control" value = " {{ $editori->nome}}">   
-Cognome:<br>
-<input type="text" name="cognome" class="form-control" value = " {{ $editori->cognome}}">   
-<br> 
 Sito editore:<br>
 <input type="text" name="sito_editore" class="form-control" value = " {{ $editori->sito_editore}}">   
 <br>

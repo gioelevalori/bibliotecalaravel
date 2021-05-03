@@ -26,7 +26,7 @@ class Libri extends Migration
             $table->text('isbn');
             $table->text('isbn13');
             $table->text('argomento');
-            $table->date('anno_edizione');
+            $table->text('anno_edizione');
             $table->text('stato');
             $table->timestamps();
            

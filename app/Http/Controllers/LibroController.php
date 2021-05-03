@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Libri;
+use App\Models\Autori;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,7 @@ class LibroController extends Controller
 
     public function create()
     {
-        $libro->autore_id = Auth::autori()->id;
-        $libro->editore_id = Auth::editori()->id;
+        
         return view('libri.create');
     }
 
@@ -80,6 +80,7 @@ class LibroController extends Controller
     public function edit($id)
     {
         $libri = Libri::find($id);
+        $autori = Autori::find($id);
         return view('libri.edit',compact('libri'));
     }
 

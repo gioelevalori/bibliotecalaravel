@@ -16,8 +16,15 @@
 <h1>Nuovo libro</h1>
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
-Autore:<br>
-{{ dd($libro->autori) }}
+
+Autore:
+<select class="form-select" aria-label="Default select example"> 
+    
+
+
+<option selected>{{ $autori->nome }}</option>
+
+</select>
 
 Luogo edizione:<br>
 <input type="text" name="luogo_edizione" class="form-control">   

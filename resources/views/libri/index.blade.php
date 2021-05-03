@@ -23,7 +23,6 @@
 <tr>
     <td>{{ $libro->id }}</td>
     <td>{{ $libro->Titolo }}</td>
-    <td>{{ dd($libro->editori) }}</td>
     <td>{{ $libro->editore_id }}</td>
     <td>{{ $libro->luogo_edizione }}</td>
     <td>{{ $libro->condizione_libro }}</td>

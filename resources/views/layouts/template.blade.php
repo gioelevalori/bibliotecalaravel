@@ -22,6 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+              @auth
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -39,10 +40,20 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('editori.index')}}">Editori</a>
               </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}">Logout </a>
+              </li> 
+          </ul>                 
+          @endauth
           <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">Entra</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+            </li>                
+            @endguest
           </form>
         </div>
         

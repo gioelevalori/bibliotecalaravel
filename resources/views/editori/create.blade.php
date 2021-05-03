@@ -16,9 +16,6 @@
 <h1>Nuovo editore</h1>
 Nome:<br>
 <input type="text" name="nome" class="form-control">   
-Cognome:<br>
-<input type="text" name="cognome" class="form-control">   
-<br> 
 Sito editore:<br>
 <input type="text" name="sito_editore" class="form-control">   
 <br> 

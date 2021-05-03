@@ -10,6 +10,14 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control" value = " {{ $libri->titolo}}">   
 Autore:<br>
+<select class="form-select" aria-label="Default select example"> 
+    
+
+
+<option selected>{{ $autori->nome }}{{ $autori->cognome }}</option>
+
+
+</select>
 
 
  

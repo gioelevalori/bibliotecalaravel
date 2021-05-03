@@ -18,7 +18,7 @@ Nome:<br>
 <input type="text" name="nome" class="form-control">   
 Cognome:<br>
 <input type="text" name="cognome" class="form-control">   
-<br> 
+<br>
 <input type="submit" value="Salva" class="btn btn-primary" />
 
 </form>

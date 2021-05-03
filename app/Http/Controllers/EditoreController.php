@@ -33,14 +33,12 @@ class EditoreController extends Controller
 
         $validated = $request->validate([
             'nome' => 'required||max:255',
-            'cognome' => 'required',
             'sito_editore' => 'required'   
         ]);
         
 
         $editore = new Editori;
         $editore->nome = $request->nome;
-        $editore->cognome = $request->cognome;
         $editore->sito_editore = $request->sito_editore;
       
         $editore->save();
@@ -76,7 +74,6 @@ class EditoreController extends Controller
     {
         $editore = Editori::find($id); 
         $editore->nome = $request->nome;
-        $editore->cognome = $request->cognome;
         $editore->sito_editore = $request->sito_editore;
       
         $editore->save();
