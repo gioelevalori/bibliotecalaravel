@@ -6,7 +6,7 @@
 @method('PUT')
 @csrf
 Nome:<br>
-<input type="text" name="nome" class="form-control" value = " {{ $utenti->name}}">   
+<input type="text" name="name" class="form-control" value = " {{ $utenti->name}}">   
 Cognome:<br>
 <input type="text" name="cognome" class="form-control" value = " {{ $utenti->cognome}}">   
 <br> 

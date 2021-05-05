@@ -17,14 +17,7 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
 
-Autore:
-<select class="form-select" aria-label="Default select example"> 
-    
-
-
-<option selected>{{ $autori->nome }}</option>
-
-</select>
+{{ dd($libri->editori->nome)}}
 
 Luogo edizione:<br>
 <input type="text" name="luogo_edizione" class="form-control">   

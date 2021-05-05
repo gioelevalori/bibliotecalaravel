@@ -9,16 +9,10 @@
 @csrf
 Titolo:<br>
 <input type="text" name="titolo" class="form-control" value = " {{ $libri->titolo}}">   
-Autore:<br>
-<select class="form-select" aria-label="Default select example"> 
-    
-
-
-<option selected>{{ $autori->nome }}{{ $autori->cognome }}</option>
-
-
-</select>
-
+Editore:<br>
+@foreach ($libri as $libro)
+{{ dd($libri->editore)}}
+@endforeach
 
  
 Luogo edizione:<br>
@@ -37,6 +31,7 @@ Anno edizione:<br>
 <input type="text" name="anno_edizione" class="form-control" value = " {{ $libri->anno_edizione}}">
 Stato:<br>
 <input type="text" name="stato" class="form-control" value = " {{ $libri->stato}}">
+
 <br>
 <input type="submit" value="Salva" class="btn btn-primary" />
 

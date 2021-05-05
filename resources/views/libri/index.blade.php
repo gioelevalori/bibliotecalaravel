@@ -18,8 +18,9 @@
         <td>Stato</td>
         <th colspan = "2">Azioni</th>
     </tr>
-
+    
 @foreach ($libri as $libro)
+
 <tr>
     <td>{{ $libro->id }}</td>
     <td>{{ $libro->Titolo }}</td>
@@ -32,7 +33,7 @@
     <td>{{ $libro->argomento }}</td>
     <td>{{ $libro->anno_edizione }}</td>
     <td>{{ $libro->stato }}</td>
-
+    
     <td><a href="/libri/{{ $libro->id }}/edit" class="btn btn-primary">Modifica</a></td>
     <td>
         <form method="post" action="{{ route('libri.destroy', $libro->id) }}">

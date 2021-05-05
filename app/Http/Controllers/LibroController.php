@@ -24,8 +24,8 @@ class LibroController extends Controller
 
     public function create()
     {
-        
-        return view('libri.create');
+        $libri = Libri::all();
+        return view('libri.create',compact('libri'));
     }
 
 
@@ -80,7 +80,6 @@ class LibroController extends Controller
     public function edit($id)
     {
         $libri = Libri::find($id);
-        $autori = Autori::find($id);
         return view('libri.edit',compact('libri'));
     }
 
