@@ -5,6 +5,10 @@ use App\Http\Controllers\UtenteController;
 use App\Http\Controllers\LibroController;
 use App\Http\Controllers\AutoreController;
 use App\Http\Controllers\EditoreController;
+use App\Http\Controllers\AdminUtenteController;
+use App\Http\Controllers\AdminAutoreController;
+use App\Http\Controllers\AdminEditoreController;
+use App\Http\Controllers\AdminLibroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,10 +34,10 @@ Route::get('/admin', function () {
     return view('admin.index');
 })->middleware('admin');
 
-
-
-
-
+Route::resource('admin/libri', AdminLibroController::class);
+Route::resource('admin/autori', AdminAutoreController::class);
+Route::resource('admin/editori', AdminEditoreController::class);
+Route::resource('admin/utenti', AdminUtenteController::class);
 Route::resource('utenti', UtenteController::class);
 Route::resource('libri', LibroController::class);
 Route::resource('autori', AutoreController::class);

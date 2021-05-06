@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -242,7 +242,22 @@ return [
         ],
         [
             'text' => 'Utenti',
-            'url'  => 'admin/users',
+            'url'  => 'admin/utenti',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Libri',
+            'url'  => 'admin/libri',
+            'icon' => 'fas fa-fw fa-book',
+        ],
+        [
+            'text' => 'Autori',
+            'url'  => 'admin/autori',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Editori',
+            'url'  => 'admin/editori',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

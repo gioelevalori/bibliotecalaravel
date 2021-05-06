@@ -17,27 +17,17 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
 Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($editori as $editore)
-        <option value="{{$editore->id}}">{{$editore->nome}}</option>
+<option value="Seleziona:" class="form-control">
+    @foreach (editore as $editori)
+        <option value="{{$editori->id}}">{{$editori->$editori}}</option>
     @endforeach
-</select>
-Sito Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($editori as $editore)
-        <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>
-    @endforeach
-</select>
 
-Autore:
-<select name="genere" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($autori as $autore)
-        <option value="{{$autore->id}}">{{$autore->nome}} {{$autore->cognome}}</option>
+
+<option value="Seleziona:" class="form-control">
+    @foreach (editore as $editori)
+        <option value="{{$editori->id}}">{{$editori->$editori}}</option>
     @endforeach
-</select>
+
 
 Luogo edizione:<br>
 <input type="text" name="luogo_edizione" class="form-control">   
@@ -52,7 +42,7 @@ Isbn13:<br>
 Argomento:<br>
 <input type="text" name="argomento" class="form-control">
 Anno edizione:<br>
-<input type="date" name="anno_edizione" class="form-control">
+<input type="text" name="anno_edizione" class="form-control">
 Stato:<br>
 <input type="text" name="stato" class="form-control">
 

@@ -8,21 +8,12 @@
 @method('PUT')
 @csrf
 Titolo:<br>
-<input type="text" name="titolo" class="form-control" value = "{{ $libri->titolo}}">   
-Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($editori as $editore)
-        <option value="{{$editore->id}}">{{$editore->nome}}</option>
-    @endforeach
-</select>
-Sito Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($editori as $editore)
-        <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>
-    @endforeach
-</select>
+<input type="text" name="titolo" class="form-control" value = " {{ $libri->titolo}}">   
+Editore:<br>
+@foreach ($libri as $libro)
+{{ dd($libri->editore)}}
+@endforeach
+
  
 Luogo edizione:<br>
 <input type="text" name="luogo_edizione" class="form-control" value = " {{ $libri->luogo_edizione}}">   

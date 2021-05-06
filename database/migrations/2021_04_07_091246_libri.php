@@ -15,9 +15,7 @@ class Libri extends Migration
     {
         Schema::create('libri', function (Blueprint $table) {
             $table->id();
-            $table->text('Titolo');
-            $table->unsignedbigInteger('autore_id');
-            $table->foreign('autore_id')->references('id')->on('autori')->onUpdate('cascade')->onDelete('cascade');
+            $table->text('titolo');
             $table->unsignedbigInteger('editore_id');
             $table->foreign('editore_id')->references('id')->on('editori')->onUpdate('cascade')->onDelete('cascade');
             $table->text('luogo_edizione');

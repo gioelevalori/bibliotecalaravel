@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Libri;
 use App\Models\Autori;
-use App\Models\Editori;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class LibroController extends Controller
+class AdminLibroController extends Controller
 {
    
     /**
@@ -20,7 +18,7 @@ class LibroController extends Controller
     {
        
         $libri = Libri::all();
-        return view('libri.index',compact('libri'));
+        return view('admin/libri.index',compact('libri'));
     }
 
 
@@ -28,8 +26,7 @@ class LibroController extends Controller
     {
         $libri = Libri::all();
         $editori = DB::table('editori')->get();
-        $autori = DB::table('libri_autori')->get();
-        return view('libri.create',compact('libri', 'editori', 'autori'));
+        return view('libri.create',compact('libri', 'editori'));
     }
 
 
@@ -84,9 +81,7 @@ class LibroController extends Controller
     public function edit($id)
     {
         $libri = Libri::find($id);
-        $editori = DB::table('editori')->get();
-        $generi = DB::table('libri_generi')->get();
-        return view('libri.edit',compact('libri', 'editori', 'libri_generi'));
+        return view('libri.edit',compact('libri'));
     }
 
     /**
