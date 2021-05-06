@@ -17,27 +17,20 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
 Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
+<select name="editori_id" class="form-control">
+<option value="0">Seleziona:</option>
     @foreach ($editori as $editore)
         <option value="{{$editore->id}}">{{$editore->nome}}</option>
     @endforeach
 </select>
 Sito Editore:
-<select name="editori" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
+<select name="editori_id" class="form-control">
+<option value="0">Seleziona:</option>
     @foreach ($editori as $editore)
         <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>
     @endforeach
 </select>
 
-Autore:
-<select name="genere" class="form-control">
-<option value="" class="form-control">Seleziona:</option>
-    @foreach ($autori as $autore)
-        <option value="{{$autore->id}}">{{$autore->nome}} {{$autore->cognome}}</option>
-    @endforeach
-</select>
 
 Luogo edizione:<br>
 <input type="text" name="luogo_edizione" class="form-control">   

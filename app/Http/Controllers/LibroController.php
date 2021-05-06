@@ -29,7 +29,7 @@ class LibroController extends Controller
         $libri = Libri::all();
         $editori = DB::table('editori')->get();
         $autori = DB::table('libri_autori')->get();
-        return view('libri.create',compact('libri', 'editori', 'autori'));
+        return view('libri.create',compact('libri', 'editori'));
     }
 
 
@@ -39,7 +39,6 @@ class LibroController extends Controller
 
         $validated = $request->validate([
             'titolo' => 'required',
-            'autore_id' => 'required',
             'editore_id' => 'required',
             'luogo_edizione' => 'required',
             'condizione_libro' => 'required',
@@ -54,7 +53,6 @@ class LibroController extends Controller
 
         $libro = new Libri;
         $libro->titolo = $request->titolo;
-        $libro->autore_id = Auth::autori()->id;
         $libro->editore_id = Auth::editori()->id;
         $libro->luogo_edizione = $request->luogo_edizione;
         $libro->condizione_libro = $request->condizione_libro;
@@ -100,7 +98,6 @@ class LibroController extends Controller
     {
         $libro = Libri::find($id); 
         $libro->titolo = $request->titolo;
-        $libro->autore_id = $request->autore_id;
         $libro->editore_id = $request->editore_id;
         $libro->luogo_edizione = $request->luogo_edizione;
         $libro->condizione_libro = $request->condizione_libro;
