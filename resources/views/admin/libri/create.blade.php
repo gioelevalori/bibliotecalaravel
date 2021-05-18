@@ -1,4 +1,9 @@
-@extends('layouts.template')
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+@stop
 
 @section('content')
 @if ($errors->any())
@@ -17,16 +22,19 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
 Editore:
-<option value="Seleziona:" class="form-control">
-    @foreach (editore as $editori)
-        <option value="{{$editori->id}}">{{$editori->$editori}}</option>
+<select name="editore_id" class="form-control">
+<option value="0">Seleziona:</option>
+    @foreach ($editori as $editore)
+        <option value="{{$editore->id}}">{{$editore->nome}}</option>
     @endforeach
-
-
-<option value="Seleziona:" class="form-control">
-    @foreach (editore as $editori)
-        <option value="{{$editori->id}}">{{$editori->$editori}}</option>
+</select>
+Sito Editore:
+<select name="editore_id" class="form-control">
+<option value="0">Seleziona:</option>
+    @foreach ($editori as $editore)
+        <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>
     @endforeach
+</select>
 
 
 Luogo edizione:<br>

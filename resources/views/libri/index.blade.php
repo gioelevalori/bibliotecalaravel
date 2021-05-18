@@ -6,8 +6,8 @@
     <tr>
         <th>ID</th>
         <td>Titolo</td>
-        <td>Autore</td>
         <td>Editore</td>
+        <td>Sito Editore</td>
         <td>Luogo Edizione</td>
         <td>Condizione Libro</td>
         <td>Codice</td>
@@ -23,7 +23,8 @@
 
 <tr>
     <td>{{ $libro->id }}</td>
-    <td>{{ $libro->Titolo }}</td>
+    <td>{{ $libro->titolo }}</td>
+    <td>{{ $libro->editore_id }}</td>
     <td>{{ $libro->editore_id }}</td>
     <td>{{ $libro->luogo_edizione }}</td>
     <td>{{ $libro->condizione_libro }}</td>

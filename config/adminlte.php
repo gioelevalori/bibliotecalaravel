@@ -260,6 +260,11 @@ return [
             'url'  => 'admin/editori',
             'icon' => 'fas fa-fw fa-user',
         ],
+        [
+            'text' => 'Prestiti',
+            'url'  => 'admin/prestiti',
+            'icon' => 'fas fa-fw fa-book',
+        ],
     ],
 
     /*

@@ -8,7 +8,7 @@
 @section('content')
 <br>
 <h1>Libri</h1> 
-<a class="btn btn-dark" href="/libri/create" role="button">Nuovo Libro</a>
+<a class="btn btn-dark" href="libri/create" role="button">Nuovo Libro</a>
 <br>
 <br>
 <table class="table table-striped table-bordered">
@@ -32,7 +32,7 @@
 
 <tr>
     <td>{{ $libro->id }}</td>
-    <td>{{ $libro->Titolo }}</td>
+    <td>{{ $libro->titolo }}</td>
     <td>{{ $libro->editore_id }}</td>
     <td>{{ $libro->luogo_edizione }}</td>
     <td>{{ $libro->condizione_libro }}</td>
@@ -43,7 +43,7 @@
     <td>{{ $libro->anno_edizione }}</td>
     <td>{{ $libro->stato }}</td>
     
-    <td><a href="/libri/{{ $libro->id }}/edit" class="btn btn-primary">Modifica</a></td>
+    <td><a href="/admin/libri/{{ $libro->id }}/edit" class="btn btn-primary">Modifica</a></td>
     <td>
         <form method="post" action="{{ route('libri.destroy', $libro->id) }}">
             @method('DELETE')

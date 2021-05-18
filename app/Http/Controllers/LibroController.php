@@ -53,7 +53,7 @@ class LibroController extends Controller
 
         $libro = new Libri;
         $libro->titolo = $request->titolo;
-        $libro->editore_id = Auth::editori()->id;
+        $libro->editore_id = $request->editore_id;
         $libro->luogo_edizione = $request->luogo_edizione;
         $libro->condizione_libro = $request->condizione_libro;
         $libro->codice = $request->codice;
@@ -83,8 +83,7 @@ class LibroController extends Controller
     {
         $libri = Libri::find($id);
         $editori = DB::table('editori')->get();
-        $generi = DB::table('libri_generi')->get();
-        return view('libri.edit',compact('libri', 'editori', 'libri_generi'));
+        return view('libri.edit',compact('libri', 'editori'));
     }
 
     /**

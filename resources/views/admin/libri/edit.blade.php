@@ -1,4 +1,9 @@
-@extends('layouts.template')
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+@stop
 
 @section('content')
   
@@ -9,10 +14,20 @@
 @csrf
 Titolo:<br>
 <input type="text" name="titolo" class="form-control" value = " {{ $libri->titolo}}">   
-Editore:<br>
-@foreach ($libri as $libro)
-{{ dd($libri->editore)}}
-@endforeach
+Editore:
+<select name="editore_id" class="form-control">
+<option value="0">Seleziona:</option>
+    @foreach ($editori as $editore)
+        <option value="{{$editore->id}}">{{$editore->nome}}</option>
+    @endforeach
+</select>
+Sito Editore:
+<select name="editore_id" class="form-control">
+<option value="0">Seleziona:</option>
+    @foreach ($editori as $editore)
+        <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>
+    @endforeach
+</select>
 
  
 Luogo edizione:<br>

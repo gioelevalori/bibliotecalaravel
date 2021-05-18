@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminUtenteController;
 use App\Http\Controllers\AdminAutoreController;
 use App\Http\Controllers\AdminEditoreController;
 use App\Http\Controllers\AdminLibroController;
+use App\Http\Controllers\AdminPrestitoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,15 +39,15 @@ Route::resource('admin/libri', AdminLibroController::class);
 Route::resource('admin/autori', AdminAutoreController::class);
 Route::resource('admin/editori', AdminEditoreController::class);
 Route::resource('admin/utenti', AdminUtenteController::class);
+Route::resource('admin/prestiti', AdminPrestitoController::class);
 Route::resource('utenti', UtenteController::class);
 Route::resource('libri', LibroController::class);
-Route::resource('autori', AutoreController::class);
-Route::resource('editori', EditoreController::class);
+
 
 
 require __DIR__.'/auth.php';
 Auth::routes();
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

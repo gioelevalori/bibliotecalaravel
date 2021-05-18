@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Autori;
 use App\Models\Editori;
+use App\Models\Prestiti;
 
 class Libri extends Model 
 {
     use HasFactory;
 
     public function autori() {
-        return $this->belongsTo(Autori::class);
+        return $this->hasMany(Autori::class);
     }
 
     public function editori() {
@@ -20,7 +21,11 @@ class Libri extends Model
     }
 
     public function generi() {
-        return $this->belongsTo(Generi::class);
+        return $this->hasMany(Generi::class);
+    }
+
+    public function prestiti() {
+        return $this->belongsTo(Prestiti::class);
     }
 
     protected $table = "libri";

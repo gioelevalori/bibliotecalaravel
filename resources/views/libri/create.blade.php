@@ -17,14 +17,14 @@
 Titolo:<br>
 <input type="text" name="titolo" class="form-control">   
 Editore:
-<select name="editori_id" class="form-control">
+<select name="editore_id" class="form-control">
 <option value="0">Seleziona:</option>
     @foreach ($editori as $editore)
         <option value="{{$editore->id}}">{{$editore->nome}}</option>
     @endforeach
 </select>
 Sito Editore:
-<select name="editori_id" class="form-control">
+<select name="editore_id" class="form-control">
 <option value="0">Seleziona:</option>
     @foreach ($editori as $editore)
         <option value="{{$editore->id}}">{{$editore->sito_editore}}</option>

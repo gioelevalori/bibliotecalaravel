@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Libri;
 use App\Models\Autori;
+use App\Models\Editori;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class AdminLibroController extends Controller
+class LibroController extends Controller
 {
    
     /**
@@ -26,7 +28,8 @@ class AdminLibroController extends Controller
     {
         $libri = Libri::all();
         $editori = DB::table('editori')->get();
-        return view('libri.create',compact('libri', 'editori'));
+        $autori = DB::table('libri_autori')->get();
+        return view('admin/libri.create',compact('libri', 'editori'));
     }
 
 
@@ -36,7 +39,6 @@ class AdminLibroController extends Controller
 
         $validated = $request->validate([
             'titolo' => 'required',
-            'autore_id' => 'required',
             'editore_id' => 'required',
             'luogo_edizione' => 'required',
             'condizione_libro' => 'required',
@@ -51,8 +53,7 @@ class AdminLibroController extends Controller
 
         $libro = new Libri;
         $libro->titolo = $request->titolo;
-        $libro->autore_id = Auth::autori()->id;
-        $libro->editore_id = Auth::editori()->id;
+        $libro->editore_id = $request->editore_id;
         $libro->luogo_edizione = $request->luogo_edizione;
         $libro->condizione_libro = $request->condizione_libro;
         $libro->codice = $request->codice;
@@ -64,7 +65,7 @@ class AdminLibroController extends Controller
       
         $libro->save();
 
-        return redirect('/libri');
+        return redirect('admin/libri');
     }
 
     public function show($id)
@@ -81,7 +82,8 @@ class AdminLibroController extends Controller
     public function edit($id)
     {
         $libri = Libri::find($id);
-        return view('libri.edit',compact('libri'));
+        $editori = DB::table('editori')->get();
+        return view('admin/libri.edit',compact('libri', 'editori'));
     }
 
     /**
@@ -95,7 +97,6 @@ class AdminLibroController extends Controller
     {
         $libro = Libri::find($id); 
         $libro->titolo = $request->titolo;
-        $libro->autore_id = $request->autore_id;
         $libro->editore_id = $request->editore_id;
         $libro->luogo_edizione = $request->luogo_edizione;
         $libro->condizione_libro = $request->condizione_libro;
@@ -108,7 +109,7 @@ class AdminLibroController extends Controller
       
         $libro->save();
 
-        return redirect('/libri');
+        return redirect('admin/libri');
     }
 
     /**
@@ -121,7 +122,7 @@ class AdminLibroController extends Controller
     {
         $libro = Libri::find($id);
         $libro->delete();
-        return redirect('/libri');
+        return redirect('admin/libri');
 
     }
 
